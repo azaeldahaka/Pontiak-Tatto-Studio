@@ -13,16 +13,34 @@ export function inicializarCalendario() {
     },
     selectable: true,
     select: function (info) {
-      const confirmado = confirm(`¿Confirmás el turno para el ${info.startStr}?`);
-      if (confirmado) {
-        // A futuro: Enviar info a backend o guardar en array
-        calendar.addEvent({
-          title: 'Turno reservado',
-          start: info.startStr,
-          end: info.endStr
-        });
-      }
-    },
+    const fecha = new Date(info.startStr);
+    const fechaStr = fecha.toLocaleDateString('es-AR', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
+    const horaStr = fecha.toLocaleTimeString('es-AR', {
+        hour: '2-digit',
+        minute: '2-digit'
+    });
+
+    // Mostrar datos en el modal
+    document.getElementById('fechaTurno').textContent = fechaStr;
+    document.getElementById('horaTurno').textContent = horaStr;
+
+    // Guardar los datos para el click posterior
+    document.getElementById('btnConfirmarTurno').onclick = () => {
+        const mensaje = `Hola! Quiero confirmar mi turno para el ${fechaStr} a las ${horaStr}.`;
+        const url = `https://wa.me/5493875693356?text=${encodeURIComponent(mensaje)}`;
+        window.open(url, '_blank');
+    };
+
+    // Mostrar modal
+    const modal = new bootstrap.Modal(document.getElementById('modalTurno'));
+    modal.show();
+    }
+    ,
     events: [
       // Turnos precargados (simulación)
       {
