@@ -1,6 +1,8 @@
-document.addEventListener("DOMContentLoaded", function () {
+export function inicializarFiltros() {
     const buttons = document.querySelectorAll(".filter-btn");
     const trabajos = document.querySelectorAll(".trabajo");
+
+    if (!buttons.length || !trabajos.length) return;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -17,4 +19,4 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-});
+}
