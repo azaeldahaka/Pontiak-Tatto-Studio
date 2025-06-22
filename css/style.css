@@ -1,0 +1,13 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
+}
+
+.promocion {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 1.4rem;
+}
