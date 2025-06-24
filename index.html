@@ -1,118 +1,113 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pontiak Tattoo Studio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pontiak Tattoo Studio</title>
 
-
+  <!-- Fuentes y estilos -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/fullcalendar@6.1.8/index.global.min.css">
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <!-- Banner -->
-    <header class="text-center bg-dark text-white py-5">
-        <h1 class="display-4 fw-bold">Pontiak</h1>
-        <p class="lead">Tattoo Studio</p>
-        <p class="promocion">🎉 2x1 en diseños lineales - 20% de descuento en cualquier diseño</p>
-    </header>
+  <!-- Banner -->
+  <header class="text-center bg-dark text-white py-5">
+    <h1 class="display-4 fw-bold">Pontiak</h1>
+    <p class="lead">Tattoo Studio</p>
+    <p class="promocion">🎉 2x1 en diseños lineales - 20% de descuento en cualquier diseño</p>
+  </header>
 
-    <!-- Galería de trabajos -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Galería de trabajos</h2>
-
-        <div class="text-center mb-4">
-            <button class="btn btn-outline-dark m-1 filter-btn" data-filter="todos">Todos</button>
-            <button class="btn btn-outline-dark m-1 filter-btn" data-filter="martina">Martina</button>
-            <button class="btn btn-outline-dark m-1 filter-btn" data-filter="manu">Manu</button>
-        </div>
-
-        <div class="row justify-content-center" id="galeria">
-            <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="martina">
-                <img src="img/tatto1.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Martina">
-            </div>
-
-            <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="manu">
-                <img src="img/tatto2.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Manu">
-            </div>
-
-            <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="manu">
-                <img src="img/tatto3.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Manu">
-            </div>
-        </div>
+  <!-- Galería -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Galería de trabajos</h2>
+    <div class="text-center mb-4">
+      <button class="btn btn-outline-dark m-1 filter-btn" data-filter="todos">Todos</button>
+      <button class="btn btn-outline-dark m-1 filter-btn" data-filter="martina">Martina</button>
+      <button class="btn btn-outline-dark m-1 filter-btn" data-filter="manu">Manu</button>
     </div>
-
-    <!-- Calendario de Turnos -->
-    <section id="agenda-turnos" class="container my-5">
-        <h2 class="text-center mb-4">Agenda tu Turno</h2>
-        <div id="calendario" class="bg-white p-3 rounded shadow-sm"></div>
-    </section>
-
-    <!-- Modal para confirmar turno -->
-    <div class="modal fade" id="modalTurno" tabindex="-1" aria-labelledby="modalTurnoLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="modalTurnoLabel">Confirmar Turno</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-            </div>
-            <div class="modal-body">
-                <p><strong>Fecha:</strong> <span id="fechaTurno"></span></p>
-                <p><strong>Hora:</strong> <span id="horaTurno"></span></p>
-                <p>Para confirmar el turno, por favor aboná una seña del 20%.</p>
-            </div>
-            <div class="modal-footer">
-                <a href="https://www.mercadopago.com.ar/" target="_blank" class="btn btn-success">💳 Pagar Seña</a>
-                <button id="btnConfirmarTurno" class="btn btn-primary">📲 Confirmar por WhatsApp</button>
-            </div>
-            </div>
-        </div>
+    <div class="row justify-content-center" id="galeria">
+      <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="martina">
+        <img src="img/tatto1.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Martina">
+      </div>
+      <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="manu">
+        <img src="img/tatto2.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Manu">
+      </div>
+      <div class="col-10 col-sm-6 col-md-4 trabajo mb-4" data-artista="manu">
+        <img src="img/tatto3.jpg" class="img-fluid rounded mx-auto d-block" alt="Tatto Manu">
+      </div>
     </div>
+  </div>
 
-    <section>
-        <h2>Registro</h2>
-        <input type="email" id="emailRegistro" placeholder="Email">
-        <input type="password" id="passwordRegistro" placeholder="Contraseña">
-        <button id="btnRegistro">Registrar</button>
-    </section>
+  <!-- Calendario -->
+  <section id="agenda-turnos" class="container my-5">
+    <h2 class="text-center mb-4">Agenda tu Turno</h2>
+    <div id="calendario" class="bg-white p-3 rounded shadow-sm"></div>
+  </section>
 
-    <section>
-        <h2>Login</h2>
-        <input type="email" id="emailLogin" placeholder="Email">
-        <input type="password" id="passwordLogin" placeholder="Contraseña">
-        <button id="btnLogin">Iniciar sesión</button>
-    </section>
+  <!-- Modal -->
+  <div class="modal fade" id="modalTurno" tabindex="-1" aria-labelledby="modalTurnoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmar Turno</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Fecha:</strong> <span id="fechaTurno"></span></p>
+          <p><strong>Hora:</strong> <span id="horaTurno"></span></p>
+          <p>Para confirmar el turno, por favor aboná una seña del 20%.</p>
+        </div>
+        <div class="modal-footer">
+          <a href="https://www.mercadopago.com.ar/" target="_blank" class="btn btn-success">💳 Pagar Seña</a>
+          <button id="btnConfirmarTurno" class="btn btn-primary">📲 Confirmar por WhatsApp</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <section>
-        <button id="btnLogout">Cerrar sesión</button>
-    </section>
+  <!-- Panel Firebase -->
+  <section class="container my-5">
+    <h2 class="text-center">🔐 Panel Firebase</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Registro</h4>
+        <input type="text" id="nombre" class="form-control mb-2" placeholder="Nombre completo">
+        <input type="text" id="especialidad" class="form-control mb-2" placeholder="Especialidad">
+        <input type="text" id="instagram" class="form-control mb-2" placeholder="@instagram">
+        <textarea id="bio" class="form-control mb-2" placeholder="Contanos sobre vos"></textarea>
+        <input type="email" id="email-registro" class="form-control mb-2" placeholder="Email">
+        <input type="password" id="pass-registro" class="form-control mb-2" placeholder="Contraseña">
+        <button id="btn-register" class="btn btn-primary">Registrarme</button>
+      </div>
+      <div class="col-md-6">
+        <h4>Iniciar sesión</h4>
+        <input type="email" id="email-login" class="form-control mb-2" placeholder="Email">
+        <input type="password" id="pass-login" class="form-control mb-2" placeholder="Contraseña">
+        <button id="btn-login" class="btn btn-success">Iniciar sesión</button>
+        <button id="btn-logout" class="btn btn-danger mt-2">Cerrar sesión</button>
+      </div>
+    </div>
+  </section>
 
+  <!-- Contacto -->
+  <section class="text-center bg-secondary text-white py-5">
+    <h3>¿Querés tu próximo tatuaje?</h3>
+    <p>Contactanos por WhatsApp y agendá tu turno ahora</p>
+    <a href="https://wa.me/5493875693356?text=Hola,%20vi%20su%20anuncio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20turnos" 
+       class="btn btn-light mt-2" target="_blank">📲 Escribinos al WhatsApp</a>
+  </section>
 
-    <!-- Contacto -->
-    <section class="text-center bg-secondary text-white py-5">
-        <h3>¿Querés tu próximo tatuaje?</h3>
-        <p>Contactanos por WhatsApp y agendá tu turno ahora</p>
-        <a href="https://wa.me/5493875693356?text=Hola,%20vi%20su%20anuncio%20y%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20los%20turnos" 
-           class="btn btn-light mt-2" target="_blank">📲 Escribinos al WhatsApp</a>
-    </section>
+  <!-- Footer -->
+  <footer class="text-center text-white bg-dark py-3">
+    <p class="mb-0">📍 Zuviría 223 - Salta Capital</p>
+    <small>© Pontiak Tattoo Studio - Diseño y desarrollo por <b>Azael Dahaka 💻</b></small>
+  </footer>
 
-    <!-- Footer -->
-    <footer class="text-center text-white bg-dark py-3">
-        <p class="mb-0">📍 Zuviría 223 - Salta Capital</p>
-        <small>© Pontiak Tattoo Studio - Diseño y desarrollo por <b>Azael Dahaka 💻</b></small>
-    </footer>
-
-    <!-- FullCalendar -->
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
-
-    <!-- Bootstrap CSS (opcional pero recomendado) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Bootstrap JS Bundle (incluye Popper) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script type="module" src="js/main.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/fullcalendar@6.1.8/index.global.min.js"></script>
+  <script type="module" src="./js/main.js"></script>
 </body>
 </html>
